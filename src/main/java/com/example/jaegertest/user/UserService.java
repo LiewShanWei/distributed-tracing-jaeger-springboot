@@ -9,13 +9,7 @@ import java.util.Map;
 
 @Service
 public class UserService {
-    @Autowired
-    private Tracer tracer;
-
     public User getUser(String id){
-        Span span = tracer.buildSpan("get-user-service").start();
-        span.log(Map.of("event","Id: " + id));
-        span.finish();
         return new User(id,"Test");
     }
 }
