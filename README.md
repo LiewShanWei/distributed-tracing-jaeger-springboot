@@ -1,10 +1,19 @@
-# jaegertracing-springboot
+# distributed-tracing-jaeger-springboot
 
-Uses opentracing's springboot and jaeger integration dependency.
-Runs with jaeger all-in-one with port 9411 forwarding and 16686 for UI
+## What is this?
+This is a Springboot project that uses opentracing-spring-jaeger-web-starter dependency to autoconfigure jaeger with Springboot. This project is used to test jaeger features using Springboot microservice.   
 
+## How to start?
+Go to : https://www.jaegertracing.io/docs/1.23/getting-started and download jaeger-all-in-one  
 
-Examples followed
-https://github.com/yurishkuro/opentracing-tutorial
-https://medium.com/jaegertracing/jaeger-and-opentelemetry-1846f701d9f2
-https://www.vinsguru.com/distributed-tracing-in-microservices-with-jaeger/
+## Commands
+To run jaeger-all-in-one: $ jaeger-all-in-one --collector.zipkin.host-port=:9411
+
+## Ports
+Jaeger default zipkin collector : 9411  
+Jaeger UI : 16686
+
+## Examples followed  
+https://github.com/yurishkuro/opentracing-tutorial  
+https://medium.com/jaegertracing/jaeger-and-opentelemetry-1846f701d9f2  
+https://www.vinsguru.com/distributed-tracing-in-microservices-with-jaeger/  
