@@ -15,7 +15,7 @@ Jaeger default zipkin collector : 9411
 Jaeger UI : 16686
 
 ## Examples followed  
-https://medium.com/swlh/tracing-in-spring-boot-with-opentracing-opentelemetry-dd724134ca93
+https://medium.com/swlh/tracing-in-spring-boot-with-opentracing-opentelemetry-dd724134ca93  
 https://github.com/yurishkuro/opentracing-tutorial  
 https://medium.com/jaegertracing/jaeger-and-opentelemetry-1846f701d9f2  
 https://www.vinsguru.com/distributed-tracing-in-microservices-with-jaeger/  
