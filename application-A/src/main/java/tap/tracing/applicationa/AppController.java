@@ -18,10 +18,9 @@ public class AppController {
     @GetMapping(value = "/get/{id}")
     public App getAppFromApplicationB(@PathVariable String id){
         final String uri = applicationBUrl + "/get/" + id;
-        RestTemplate restTemplate = new RestTemplate();
 
-        App result = restTemplate.getForObject(uri, App.class);
-        return result;
+        App response = restTemplate.getForObject(uri, App.class);
+        return response;
     }
 
 }

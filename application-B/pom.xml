@@ -11,7 +11,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 
-    <groupId>tap.tracing.example</groupId>
+    <groupId>tap.tracing</groupId>
     <artifactId>application-B</artifactId>
     <version>1.0-SNAPSHOT</version>
     <name>application-B</name>

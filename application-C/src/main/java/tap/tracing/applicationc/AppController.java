@@ -4,12 +4,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class AppController {
     @Autowired
-    private RestTemplate restTemplate;
+    private AppService appService;
 
     private final String applicationAUrl = "http://localhost:8081";
     private final String applicationBUrl = "http://localhost:8082";
@@ -17,7 +16,6 @@ public class AppController {
 
     @GetMapping(value = "/get/{id}")
     public App getApp(@PathVariable String id){
-        return new App(id);
+        return appService.GenerateNewApp(id);
     }
-
 }
