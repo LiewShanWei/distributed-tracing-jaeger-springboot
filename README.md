@@ -1,4 +1,4 @@
-# distributed-tracing-jaeger-springboot
+# distributed-tracing-springboot
 
 ## What is this?
 This is a Springboot project that uses opentracing-spring-jaeger-web-starter dependency to autoconfigure jaeger with Springboot. This project is used to test jaeger features using Springboot microservice.   
