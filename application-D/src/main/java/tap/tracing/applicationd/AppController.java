@@ -26,6 +26,7 @@ public class AppController {
     @ContinueSpan
     public App getAppFromService(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
+
         return appService.GenerateNewApp(id);
     }
 

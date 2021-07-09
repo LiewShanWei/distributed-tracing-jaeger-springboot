@@ -21,10 +21,9 @@ public class AppController {
     @GetMapping(value = "/get/{id}")
     public App getAppFromApplicationB(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
-        final String uri = applicationCUrl + "/get/" + id;
 
-        App response = restTemplate.getForObject(uri, App.class);
-        return response;
+        final String uri = applicationBUrl + "/get/" + id;
+        return restTemplate.getForObject(uri, App.class);
     }
 
 }

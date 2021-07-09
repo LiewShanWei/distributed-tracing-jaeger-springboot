@@ -6,9 +6,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.client.RestTemplate;
 
 @RestController
 public class AppController {
+    @Autowired
+    private RestTemplate restTemplate;
+
     @Autowired
     private AppService appService;
 
@@ -18,8 +22,10 @@ public class AppController {
     private final String applicationDUrl = "http://localhost:8084";
 
     @GetMapping(value = "/get/{id}")
-    public App getAppFromService(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
+    public App getAppFromApplicationD(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
-        return appService.GenerateNewApp(id);
+
+        final String uri = applicationDUrl + "/get/" + id;
+        return restTemplate.getForObject(uri, App.class);
     }
 }
