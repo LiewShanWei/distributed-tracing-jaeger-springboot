@@ -3,25 +3,30 @@
 ## What is this?
 This is a Springboot project that contains microservices which uses various open-sourced distributed tracing solutions to explore the capabilities available.
 
-## Microservices Available
+## Modules Available
+There are 4 modules available.  
+* `application-A` and `application-B` deals with **Jaeger**
+* `application-C` and `application-D` deals with **Spring Cloud Sleuth with Zipkin and Opentracing**
 
-### Application A - Jaeger
-This application auto-instruments traces using <b>Jaeger</b> and sends them to a Backend Collector.  
-The `pom.xml` contains `opentracing-spring-jaeger-cloud-starter` dependency from `io.opentracing.contrib`. 
+Before you run the applications, you will need to start a Jaeger backend collecting agent.  
+1. Go to : https://www.jaegertracing.io/docs/1.23/getting-started and download `jaeger-all-in-one`
+1. Run the following command to start Jaeger-all-in-one, with the collector running at port 9411: `start jaeger-all-in-one --collector.zipkin.host-port=:9411`
 
-### Application B
+### Application A and Application B - Jaeger
+These applications auto-instruments traces using `Jaeger` and sends them to a Jaeger Collector.  
+The `pom.xml` contains `opentracing-spring-jaeger-cloud-starter` dependency.
 
-### Application C
+#### How to use?
+A REST API in Application A will call Application B, which in turn will call it's own internal service.  
+Use the following example to test: `http://localhost:8081/get/123`
 
-### Application D
+### Application C and Application D - Spring Cloud Sleuth with Zipkin
+These applications auto-instruments traces using <b>Spring Cloud Sleuth</b> and sends them to a `Jaeger` Collector.  
+The `pom.xml` contains `spring-cloud-sleuth-zipkin` and `brave-opentracing` dependencies
 
-### Application E
-
-## How to start?
-Go to : https://www.jaegertracing.io/docs/1.23/getting-started and download jaeger-all-in-one  
-
-## Commands
-To run jaeger-all-in-one: $ jaeger-all-in-one --collector.zipkin.host-port=:9411
+#### How to use?
+A REST API in Application C will call Application D, which in turn will call it's own internal service.  
+Use the following example to test: `http://localhost:8083/get/123`
 
 ## Ports
 Jaeger metrics : 14269/metrics  
