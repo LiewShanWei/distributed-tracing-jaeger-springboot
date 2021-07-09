@@ -1,7 +1,21 @@
-# distributed-tracing-springboot
+# Enabling Distributed Tracing in Springboot Applications
 
 ## What is this?
-This is a Springboot project that uses opentracing-spring-jaeger-web-starter dependency to autoconfigure jaeger with Springboot. This project is used to test jaeger features using Springboot microservice.   
+This is a Springboot project that contains microservices which uses various open-sourced distributed tracing solutions to explore the capabilities available.
+
+## Microservices Available
+
+### Application A - Jaeger
+This application auto-instruments traces using <b>Jaeger</b> and sends them to a Backend Collector.  
+The `pom.xml` contains `opentracing-spring-jaeger-cloud-starter` dependency from `io.opentracing.contrib`. 
+
+### Application B
+
+### Application C
+
+### Application D
+
+### Application E
 
 ## How to start?
 Go to : https://www.jaegertracing.io/docs/1.23/getting-started and download jaeger-all-in-one  
