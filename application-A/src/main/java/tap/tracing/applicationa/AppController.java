@@ -16,11 +16,12 @@ public class AppController {
     private final String applicationAUrl = "http://localhost:8081";
     private final String applicationBUrl = "http://localhost:8082";
     private final String applicationCUrl = "http://localhost:8083";
+    private final String applicationDUrl = "http://localhost:8084";
 
     @GetMapping(value = "/get/{id}")
     public App getAppFromApplicationB(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
-        final String uri = applicationBUrl + "/get/" + id;
+        final String uri = applicationCUrl + "/get/" + id;
 
         App response = restTemplate.getForObject(uri, App.class);
         return response;

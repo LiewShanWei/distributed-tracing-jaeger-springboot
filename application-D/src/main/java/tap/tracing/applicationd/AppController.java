@@ -1,4 +1,4 @@
-package tap.tracing.applicationb;
+package tap.tracing.applicationd;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.sleuth.annotation.ContinueSpan;
@@ -14,6 +14,9 @@ public class AppController {
     @Autowired
     private RestTemplate restTemplate;
 
+    @Autowired
+    private AppService appService;
+
     private final String applicationAUrl = "http://localhost:8081";
     private final String applicationBUrl = "http://localhost:8082";
     private final String applicationCUrl = "http://localhost:8083";
@@ -21,12 +24,9 @@ public class AppController {
 
     @GetMapping(value = "/get/{id}")
     @ContinueSpan
-    public App getAppFromApplicationC(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
+    public App getAppFromService(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
-        final String uri = applicationDUrl + "/get/" + id;
-
-        App response = restTemplate.getForObject(uri, App.class);
-        return response;
+        return appService.GenerateNewApp(id);
     }
 
 }

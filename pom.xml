@@ -12,5 +12,6 @@
 		<module>application-A</module>
 		<module>application-B</module>
 		<module>application-C</module>
+		<module>application-D</module>
 	</modules>
 </project>

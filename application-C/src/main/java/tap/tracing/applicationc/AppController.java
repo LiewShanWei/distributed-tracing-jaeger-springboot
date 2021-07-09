@@ -15,9 +15,10 @@ public class AppController {
     private final String applicationAUrl = "http://localhost:8081";
     private final String applicationBUrl = "http://localhost:8082";
     private final String applicationCUrl = "http://localhost:8083";
+    private final String applicationDUrl = "http://localhost:8084";
 
     @GetMapping(value = "/get/{id}")
-    public App getApp(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
+    public App getAppFromService(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
         return appService.GenerateNewApp(id);
     }
