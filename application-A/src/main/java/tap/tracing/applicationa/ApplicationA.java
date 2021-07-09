@@ -14,7 +14,6 @@ public class ApplicationA {
 
     @Bean
     public RestTemplate restTemplate(RestTemplateBuilder builder) {
-        RestTemplate restTemplate=builder.build();
-        return restTemplate;
+        return builder.build();
     }
 }
