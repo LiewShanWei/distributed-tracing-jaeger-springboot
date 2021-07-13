@@ -22,7 +22,7 @@ public class AppController {
     private final String applicationDUrl = "http://localhost:8084";
 
     @GetMapping(value = "/get/{id}")
-    public App getAppFromApplicationC(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
+    public App getAppFromService(@RequestHeader MultiValueMap<String, String> headers, @PathVariable String id){
         headers.forEach((key, value) -> System.out.printf("Header '%s' = %s%n", key, String.join("|", value)));
 
         return appService.GenerateNewApp(id);

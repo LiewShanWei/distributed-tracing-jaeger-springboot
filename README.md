@@ -15,17 +15,11 @@ Before you run the applications, you will need to start a Jaeger backend collect
 ### Application A and Application B - Jaeger
 These applications auto-instruments traces using `Jaeger` and sends them to a Jaeger Collector.  
 The `pom.xml` contains `opentracing-spring-jaeger-cloud-starter` dependency.
-
-#### How to use?
-A REST API in Application A will call Application B, which in turn will call it's own internal service.  
 Use the following example to test: `http://localhost:8081/get/123`
 
 ### Application C and Application D - Spring Cloud Sleuth with Zipkin
 These applications auto-instruments traces using <b>Spring Cloud Sleuth</b> and sends them to a `Jaeger` Collector.  
-The `pom.xml` contains `spring-cloud-sleuth-zipkin` and `brave-opentracing` dependencies
-
-#### How to use?
-A REST API in Application C will call Application D, which in turn will call it's own internal service.  
+The `pom.xml` contains `spring-cloud-sleuth-zipkin` and `brave-opentracing` dependencies  
 Use the following example to test: `http://localhost:8083/get/123`
 
 ## Ports
