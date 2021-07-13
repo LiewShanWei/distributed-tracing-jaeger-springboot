@@ -1,10 +1,7 @@
 # Enabling Distributed Tracing in Springboot Applications
+Springboot project that contains microservices which uses various open-sourced distributed tracing solutions to explore the capabilities.
 
-## What is this?
-This is a Springboot project that contains microservices which uses various open-sourced distributed tracing solutions to explore the capabilities available.
-
-## Modules Available
-There are 4 modules available.  
+## Modules
 * `application-A` and `application-B` deals with **Jaeger**
 * `application-C` and `application-D` deals with **Spring Cloud Sleuth with Zipkin and Opentracing**
 
